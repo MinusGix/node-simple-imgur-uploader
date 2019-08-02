@@ -1,0 +1,14 @@
+{
+  "name": "simple-imgur-uploader",
+  "version": "1.0.0",
+  "description": "An attempt at making a simple imgur uploader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "imgur"
+  ],
+  "author": "MinusGix",
+  "license": "MIT"
+}
