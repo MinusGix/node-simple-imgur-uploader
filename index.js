@@ -8,7 +8,7 @@ class ImgurUploader {
         this.apiPath = "/3/upload/";
     }
 
-    uploadFileBuffer (buffer, callback=((err,data)=>{}), title="Autuploaded", description="", filename="file", type="image") {
+    uploadFileBuffer (buffer, callback=((err,data)=>{}), type="image", title="Autuploaded", description="", filename="file") {
         let data = {
             type: "base64",
             title: title,
@@ -53,6 +53,19 @@ class ImgurUploader {
 
         req.write(data);
         req.end();
+    }
+
+    async uploadFileBufferAsync (buffer, type="image", title="Autuploaded", description="", filename="file") {
+        var self = this;
+        return new Promise(function (resolve, reject) {
+            self.uploadFileBuffer(buffer, function (err, data) {
+                if (err !== null) {
+                    reject(err);
+                } else {
+                    resolve(data);
+                }
+            }, type, title, description, filename);
+        });
     }
 };
 
