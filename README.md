@@ -17,7 +17,7 @@ instance.uploadFileBuffer(file, (err, data) => {
     console.log(data);
 }, "image");
 
-instance.uploadFileBufferAsync(file, "image").
+instance.uploadFileBufferAsync(file, "image")
     .then(data => console.log(data))
     .catch(err => console.error(err));
 ```
